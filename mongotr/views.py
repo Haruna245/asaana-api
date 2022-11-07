@@ -23,16 +23,12 @@ def createPayment(request):
     PayedAmount = pay-cashBacks
     print(PayedAmount)
     print(cashBacks)
-    """ data._mutable = True
-    data['user'] = request.user
-    discounts = data['discount']
-    SavedAmount = data['payment']-discounts
-    print(data) """
+
     payment= Payment.objects.create(user=request.user,payment=pay,
     cashback=cashBacks,amountPayed=PayedAmount
     )
     serializers=PaymentSerializers(payment,many=False) 
-    return Response("success")
+    return Response("Data submitted successfully")
 
 @api_view(['GET'])
 def getPayments(request):
