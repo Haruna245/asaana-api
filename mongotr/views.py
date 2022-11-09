@@ -16,7 +16,7 @@ def getEndpoints(request):
 def createPayment(request):
     data = request.data
     #print(data)
-    print(request.user)
+    #print(request.user)
     cashBacks = int(data['cashback'])
     pay = int(data['payment'])
     
