@@ -15,14 +15,14 @@ def getEndpoints(request):
 @api_view(['POST'])
 def createPayment(request):
     data = request.data
-    print(data)
+    #print(data)
     print(request.user)
     cashBacks = int(data['cashback'])
     pay = int(data['payment'])
     
     PayedAmount = pay-cashBacks
-    print(PayedAmount)
-    print(cashBacks)
+    """ print(PayedAmount)
+    print(cashBacks) """
 
     payment= Payment.objects.create(user=request.user,payment=pay,
     cashback=cashBacks,amountPayed=PayedAmount
